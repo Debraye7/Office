@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl":".",
+    "paths": {
+      "@/*": ["./*"],
+      "@public/*": ["./public/*"],
+      "@src/*": ["./src/*"],
+      "@config/*": ["./src/config/*"],
+      "@app/*": ["./src/app/*"],
+      "@api/*": ["./src/app/api/*"],
+//! Modules
+      "@dashboard/*": ["./src/modules/dashboard/*"],
+      "@tasks/*": ["./src/modules/tasks/*"],
+      "@goals/*": ["./src/modules/goals/*"],
+      "@reports/*": ["./src/modules/reports/*"],
+      "@desks/*": ["./src/modules/desks/*"],
+        "@categories/*": ["./src/modules/desks/categories/*"],
+        "@folders/*": ["./src/modules/desks/folders/*"],
+      "@users/*": ["./src/modules/users/*"],
+        "@sessions/*": ["./src/modules/users/sessions/*"],
+      "@accounts/*": ["./src/modules/accounts/*"],
+        "@transactions/*": ["./src/modules/accounts/transactions/*"],
+      "@calendar/*": ["./src/modules/calendar/*"],
+        "@events/*": ["./src/modules/calendar/events/*"],
+      "@inventories/*": ["./src/modules/inventories/*"],
+        "@items/*": ["./src/modules/inventories/items/*"],
+      "@products/*": ["./src/modules/products/*"],
+        "@movements/*": ["./src/modules/products/movements/*"],
+      "@store/*": ["./src/modules/store/*"],
+//! Shared
+      "@shared/*": ["./src/shared/*"],
+      "@home/*": ["./src/shared/home/*"],
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

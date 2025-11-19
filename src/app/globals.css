@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@config "../../tailwind.config.ts";
+
+@layer base {
+  body {
+    overflow-x: hidden;
+  }
+  * {
+    scrollbar-color: #79716b transparent;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  };
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  #receipt, #receipt * {
+    visibility: visible;
+  }
+
+  #receipt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: white;
+    box-shadow: none;
+  }
+}
+
+
+/*! Inputs */
+
+.input-label-container {
+  @apply flex flex-col gap-1;
+}
+
+.input-label {
+  @apply font-medium text-start text-sm text-tertiary-dark dark:text-tertiary-light;
+}
+
+.input-container {
+  @apply flex-1 w-full flex justify-between gap-2 px-5 py-2.5 rounded bg-secondary-light focus-within:bg-primary-light dark:bg-secondary-dark dark:focus-within:bg-primary-dark border border-tertiary-light dark:border-tertiary-dark outline-none duration-300;
+}
+
+.input {
+  @apply w-full bg-transparent outline-none font-medium text-primary-dark dark:text-primary-light;
+}
+
+
+
+
+
+
+
+
+
+
+.text-basic {
+  @apply text-primary-dark dark:text-primary-light;
+}
+
+.btn-primary {
+  @apply w-full text-sm font-medium text-primary-dark dark:text-primary-light bg-blue-light dark:bg-blue-dark shadow-lg;
+}
+
+.card {
+  @apply p-2 sm:p-2.5 rounded-md border border-secondary-light dark:border-secondary-dark shadow shadow-quaternary/15 dark:shadow-secondary-dark/75 overflow-hidden;
+}
+
+.card-btn {
+  @apply flex justify-center items-center gap-1.5 w-full px-3 min-h-12 rounded-md font-medium text-primary-dark dark:text-primary-light bg-secondary-light dark:bg-secondary-dark focus-within:bg-primary-light dark:focus-within:bg-primary-dark border border-tertiary-light dark:border-tertiary-dark cursor-pointer disabled:cursor-not-allowed duration-300;
+}
+.card-btn-fill {
+  @apply flex items-center justify-center gap-1.5 px-4 py-3.5 rounded-lg text-nowrap font-semibold text-xs sm:text-sm text-primary-light dark:text-primary-dark hover:text-primary-dark dark:hover:text-primary-light bg-primary-dark dark:bg-primary-light hover:bg-transparent dark:hover:bg-transparent cursor-pointer disabled:cursor-not-allowed duration-300;
+}
+.card-btn-red {
+  @apply flex items-center justify-center gap-1.5 px-4 py-3.5 rounded-lg text-nowrap font-semibold text-xs sm:text-sm text-primary-light dark:text-primary-dark hover:text-red-light hover:dark:text-red-dark bg-red-light dark:bg-red-dark hover:bg-transparent dark:hover:bg-transparent cursor-pointer disabled:cursor-not-allowed duration-300;
+}
+
+.form-card {
+  @apply p-6 rounded-lg border border-tertiary-light dark:border-tertiary-dark shadow-md shadow-quaternary/15 dark:shadow-secondary-dark/75;
+}
+
+.form-input {
+  @apply w-full px-2.5 py-3 outline-none rounded-md mt-2 font-medium text-sm text-primary-dark dark:text-primary-light bg-secondary-light dark:bg-secondary-dark focus-within:bg-primary-light dark:focus-within:bg-primary-dark border border-tertiary-light dark:border-tertiary-dark placeholder:text-quaternary/50 duration-300;
+}
+
+.add-btn {
+  @apply flex items-center justify-center gap-1.5 w-full px-4 py-3 rounded whitespace-nowrap font-medium text-sm md:text-base text-primary-dark dark:text-primary-light hover:text-primary-dark dark:hover:text-primary-light bg-primary-dark dark:bg-primary-light hover:bg-transparent border border-primary-dark dark:border-primary-light cursor-pointer duration-300;
+}
+
+.tool-btn {
+  @apply flex items-center justify-center gap-1 xl:gap-1 px-6 h-10 rounded-full whitespace-nowrap font-semibold text-xs xl:text-sm text-primary-light dark:text-primary-dark hover:text-primary-dark dark:hover:text-primary-light bg-primary-dark dark:bg-primary-light hover:bg-primary-light dark:hover:bg-primary-dark border-2 border-primary-dark dark:border-primary-light cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 duration-300;
+}
+
+.tool-btn-red {
+  @apply flex items-center justify-center gap-1 xl:gap-1 px-6 h-10 rounded-full whitespace-nowrap font-semibold text-xs xl:text-sm text-primary-light dark:text-primary-dark hover:text-red-light dark:hover:text-red-dark bg-red-light dark:bg-red-dark hover:bg-primary-light dark:hover:bg-primary-dark border-2 border-red-light dark:border-red-dark cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 duration-300;
+}
+
+.user-card {
+  @apply rounded-xl border bg-secondary-light dark:bg-secondary-dark hover:bg-primary-light dark:hover:bg-primary-dark border-tertiary-light dark:border-tertiary-dark shadow-md shadow-quaternary/15 dark:shadow-secondary-dark/75 duration-300;
+}
+
+.info-box {
+  @apply flex-1 flex flex-col gap-2;
+}
+
+.info-box-label {
+  @apply text-nowrap font-semibold text-xs text-quaternary;
+}
+
+.info-box-value {
+  @apply font-medium text-sm text-tertiary-dark dark:text-tertiary-light;
+}
+
+
+/* @import "tailwindcss";
+
+@theme {
+  --font-display: 'Poppins', "sans-serif";
+  --breakpoint-3xl: 1920px;
+  --color-blue-light: #1447e6;
+  --color-blue-dark:  #51a2ff;
+  --color-red-light: #e7000b;
+  --color-red-dark:  #fb2c36;
+  --color-yellow-light: #d08700;
+  --color-yellow-dark:  #efb100;
+  --color-green-light: #00a63e;
+  --color-green-dark:  #00c951;
+  --color-primary-light: #f5f5f4;
+  --color-secondary-light: #e7e5e4;
+  --color-tertiary-light: #d6d3d1;
+  --color-primary-dark: #0c0a09;
+  --color-secondary-dark: #1c1917;
+  --color-tertiary-dark: #292524;
+  --color-quaternary: #79716b;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-display);
+  }
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
